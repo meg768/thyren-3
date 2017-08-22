@@ -1,31 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {IndexRoute, hashHistory, Router, Route} from 'react-router';
+import { BrowserRouter, HashRouter, Switch, Route } from 'react-router-dom'
+
+
+import Home from '../pages/home/home.js';
+import About from '../pages/about/about.js';
 
 
 require('../less/styles.less');
 
+const Main = () => (
+  <main>
+    <Switch>
+      <Route  exact path='/' component={Home}/>
+      <Route path='/about' component={About}/>
+      <Route path='/roster' component={About}/>
+      <Route path='/schedule' component={About}/>
+      <Route   path='/' component={Home}/>
+    </Switch>
+  </main>
+)
 
-var App = React.createClass({
-  render: function() {
+const App = () => (
+    <HashRouter>
+        <Main />
+    </HashRouter>
+)
 
 
-    return (
-		<div className='app'>
-			{this.props.children}
-    	</div>
-    );
-  }
-})
-
-
-ReactDOM.render((
-	<Router history={hashHistory}>
-		<Route path="/" component={App}>
-			<IndexRoute component={require('../pages/home/home.js')} />
-			<Route path="home"          component={require('../pages/home/home.js')} />
-			<Route path="about"         component={require('../pages/about/about.js')} />
-
-		</Route>
-	</Router>
-), document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'))

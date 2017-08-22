@@ -7,7 +7,7 @@ APP_SOURCE   = ./src/routes/index.js
 
 SRC_FILES    = $(shell find ./src -type f -not -path '*/\.*') $(APP_ICON) $(APP_HTML)
 
-WEB_LOCATION = www/meg/lampor
+WEB_LOCATION = www/thyren-3
 WEB_USER     = admin
 WEB_SERVER   = nestor
 

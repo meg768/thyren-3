@@ -10,7 +10,7 @@ var io = require('socket.io-client');
 
 //var url = sprintf('http://85.24.190.138:3002/tellstick');
 var url = sprintf('http://app-o.se/tellstick');
-console.log('Connecting to %s...', url);
+console.log('Connecting XXX to %s...', url);
 var socket = io.connect(url);
 
 socket.on('hello', function(){
@@ -117,7 +117,7 @@ module.exports = class Home extends React.Component {
 
 				<FormGroup>
 					<ListGroup>
-						<DeviceHeader name='Kontoret'/>
+						<DeviceHeader name='KontoretX'/>
 						<Device name='Alla lampor' device='FK-01-01'/>
 						<Device name='Läslampa' device='FK-01-02'/>
 						<Device name='Övriga lampor' device='FK-01-03'/>
@@ -156,7 +156,7 @@ module.exports = class Home extends React.Component {
 	render() {
 		var style = {};
 
-
+		console.log('ENDDEING');
 		return (
 			<div id="home">
 				<Grid>
